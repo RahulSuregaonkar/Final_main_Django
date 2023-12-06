@@ -1,0 +1,13 @@
+WARNING 2023-12-06 19:07:24,991 log log.py 241 log_response Not Found: /image/worldmap.png
+WARNING 2023-12-06 19:07:39,831 log log.py 241 log_response Not Found: /image/worldmap.png
+WARNING 2023-12-06 19:07:42,025 log log.py 241 log_response Not Found: /image/worldmap.png
+WARNING 2023-12-06 19:07:42,032 log log.py 241 log_response Not Found: /media/images/81dFDRqDhIL._SL1418__MloRZNR.jpg
+WARNING 2023-12-06 19:08:00,621 log log.py 241 log_response Not Found: /basket/image/worldmap.png
+WARNING 2023-12-06 19:08:05,351 log log.py 241 log_response Not Found: /basket/image/worldmap.png
+WARNING 2023-12-06 19:08:26,429 log log.py 241 log_response Not Found: /checkout/image/worldmap.png
+WARNING 2023-12-06 19:08:40,050 log log.py 241 log_response Not Found: /checkout/set_delivery_address/image/worldmap.png
+WARNING 2023-12-06 19:08:46,098 log log.py 241 log_response Not Found: /checkout/delivery_address/image/worldmap.png
+WARNING 2023-12-06 19:08:48,414 log log.py 241 log_response Not Found: /checkout/payment_selection/image/worldmap.png
+WARNING 2023-12-06 19:09:13,862 log log.py 241 log_response Not Found: /checkout/payment_successful/image/worldmap.png
+WARNING 2023-12-06 19:09:16,238 log log.py 241 log_response Not Found: /account/orders/image/worldmap.png
+WARNING 2023-12-06 19:09:23,937 log log.py 241 log_response Not Found: /image/worldmap.png
