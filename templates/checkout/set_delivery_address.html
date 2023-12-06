@@ -35,7 +35,7 @@
 </div>
 {% for address in addresses %}
 {% if not address.default %}
- <a href="{% url 'account:set_default' address.id %}" class="btn btn-success fw-bold w-100">select  Address</a>
+ <a href="{% url 'account:set_default' address.id %}" class="btn btn-success fw-bold w-100">select the other Address</a>
 {% else %}
 <a role="button" href="{% url 'checkout:payment_selection' %}" class="btn btn-success fw-bold w-100" type="button">Confirm this address and pay</a>
 {% endif %}

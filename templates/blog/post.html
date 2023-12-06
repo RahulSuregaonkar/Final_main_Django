@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="{% static '/css/blog2.css' %}">
     <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" 
     rel="stylesheet"  type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-qVyh7zgFvE2+nUcAH63U+R0+vzbNtHe2e0d4g+RlqEFad2u1w9mlC4e7akrqpXbhavdg7S5UksifTw7s2kO5Bg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <body>
@@ -112,7 +113,7 @@
         
         <div class="blog-post-container container">
             <div class="blog-post-data">
-                <h3 class="title blog-post-title">Is VR the future?</h3>
+                <h3 class="title blog-post-title">{{ post.title }}</h3>
                 <div class="article-data">
                     <span>Dec 6th 2021</span>
                     <span class="article-data-spacer"></span>
@@ -134,30 +135,8 @@
                 </blockquote>
             
 
-
-                <div class="author d-grid">
-                    <div class="author-image-box">
-                        <img src="./assets/images/author.jpg" alt="" class="article-image">
-                    </div>
-                    <div class="author-about">
-                        <h3 class="author-name">John Doe</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque quis repellat rerum, possimus cumque dolor repellendus eligendi atque explicabo exercitationem id.</p>
-                        <ul class="list social-media">
-                            <li class="list-item">
-                                <a href="#" class="list-link"><i class="ri-instagram-line"></i></a>
-                            </li>
-                            <li class="list-item">
-                                <a href="#" class="list-link"><i class="ri-facebook-circle-line"></i></a>
-                            </li>
-                            <li class="list-item">
-                                <a href="#" class="list-link"><i class="ri-twitter-line"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
                 {% with allcomments as total_comments %}
-                <h2>Average Ratings</h2>
+                <h2>Ratings</h2>
                 
                 <h2>
                 ({{ total_comments }} review{{ total_comments|pluralize }})
@@ -165,14 +144,13 @@
                 {% endwith %}
                 <div class="rating-star">  
                     <h3>{{ post.average_rating|floatformat:2 }}/5</h3>
-                    <span>
-                        <i class="fa fa-star{% if post.average_rating < 0.5 %}-o{% elif post.average_rating >= 0.5 and post.average_rating < 1 %}-half-o {% endif %}" aria-hidden="true"></i>
-                        <i class="fa fa-star{% if post.average_rating < 1.5 %}-o{% elif post.average_rating >= 1.5 and post.average_rating < 2 %}-half-o {% endif %}" aria-hidden="true"></i>
-                        <i class="fa fa-star{% if post.average_rating < 2.5 %}-o{% elif post.average_rating >= 2.5 and post.average_rating < 3 %}-half-o {% endif %}" aria-hidden="true"></i>
-                        <i class="fa fa-star{% if post.average_rating < 3.5 %}-o{% elif post.average_rating >= 3.5 and post.average_rating < 4 %}-half-o {% endif %}" aria-hidden="true"></i>
-                        <i class="fa fa-star{% if post.average_rating < 4.5 %}-o{% elif post.average_rating >= 4.5 and post.average_rating < 5 %}-half-o {% endif %}" aria-hidden="true"></i>
-
-                    </span>
+                    <div class="star-rating">
+                        <i class="fa fa-star{% if post.average_rating < 0.5 %}-o{% elif post.average_rating >= 0.5 and post.average_rating < 1 %}-half-o{% endif %}" aria-hidden="true"></i>
+                        <i class="fa fa-star{% if post.average_rating < 1.5 %}-o{% elif post.average_rating >= 1.5 and post.average_rating < 2 %}-half-o{% endif %}" aria-hidden="true"></i>
+                        <i class="fa fa-star{% if post.average_rating < 2.5 %}-o{% elif post.average_rating >= 2.5 and post.average_rating < 3 %}-half-o{% endif %}" aria-hidden="true"></i>
+                        <i class="fa fa-star{% if post.average_rating < 3.5 %}-o{% elif post.average_rating >= 3.5 and post.average_rating < 4 %}-half-o{% endif %}" aria-hidden="true"></i>
+                        <i class="fa fa-star{% if post.average_rating < 4.5 %}-o{% elif post.average_rating >= 4.5 and post.average_rating < 5 %}-half-o{% endif %}" aria-hidden="true"></i>
+                    </div>
                 </div>
                 
             </div>
@@ -194,7 +172,6 @@
                                         <img src="{{ node.image.avatar.url }}" width="40" height="40" class="rounded-circle mr-3">
                                         <div class="">
                                             <h4 class="">{{ node.name }}</h4>
-                                            <h4 class="">{{ node.level }}</h4>
                                             <small><p class="c-badge">top comment</p></small>
                                         </div>
                                     </div>
@@ -202,14 +179,15 @@
                                     <h3 class="text-justify comment-text mb-0">{{ node.content }}</h3>
                                     <div class="d-flex flex-row user-feed">
                                         {% if node.rate > 0 %}
-                                        <label class="stars"><strong>stars<code></code></strong>
-                                            <span>
-                                                <i class="fa fa-star fa-lg star-icon4{% if node.rate < 0.5 %}-o{% elif node.rate >= 0.5 and node.rate < 1 %}-half-o {% endif %}" aria-hidden="true"></i>
-                                                <i class="fa fa-star fa-lg star-icon4{% if node.rate < 1.5 %}-o{% elif node.rate >= 1.5 and node.rate < 2 %}-half-o {% endif %}" aria-hidden="true"></i>
-                                                <i class="fa fa-star fa-lg star-icon4{% if node.rate < 2.5 %}-o{% elif node.rate >= 2.5 and node.rate < 3 %}-half-o {% endif %}" aria-hidden="true"></i>
-                                                <i class="fa fa-star fa-lg star-icon4{% if node.rate < 3.5 %}-o{% elif node.rate >= 3.5 and node.rate < 4 %}-half-o {% endif %}" aria-hidden="true"></i>
-                                                <i class="fa fa-star fa-lg star-icon4{% if node.rate < 4.5 %}-o{% elif node.rate >= 4.5 and node.rate < 5 %}-half-o {% endif %}" aria-hidden="true"></i>
-                                            </span>
+                                        <label class="rating-star">
+                                            <br>
+                                            <div class="star-rating">
+                                                <i class="fa fa-star{% if node.rate < 0.5 %}-o{% elif node.rate >= 0.5 and node.rate < 1 %}-half-o{% endif %}" aria-hidden="true"></i>
+                                                <i class="fa fa-star{% if node.rate < 1.5 %}-o{% elif node.rate >= 1.5 and node.rate < 2 %}-half-o{% endif %}" aria-hidden="true"></i>
+                                                <i class="fa fa-star{% if node.rate < 2.5 %}-o{% elif node.rate >= 2.5 and node.rate < 3 %}-half-o{% endif %}" aria-hidden="true"></i>
+                                                <i class="fa fa-star{% if node.rate < 3.5 %}-o{% elif node.rate >= 3.5 and node.rate < 4 %}-half-o{% endif %}" aria-hidden="true"></i>
+                                                <i class="fa fa-star{% if node.rate < 4.5 %}-o{% elif node.rate >= 4.5 and node.rate < 5 %}-half-o{% endif %}" aria-hidden="true"></i>
+                                            </div>
                                         </label>
                                         {% endif %}
                                         <span class="wish"><i class="fa fa-heartbeat mr-2"></i>{{ node.publish }}</span>
@@ -283,7 +261,7 @@
                 <a href="./index.html">
                     <h2 class="logo">Blogs</h2>
                 </a>
-                <p class="company-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, iure. Harum, animi dolores, nam, ad magni expedita.</p>
+                <p class="company-description">"Words have the power to inspire, create, and transform. In the vast landscape of the internet, let your blog be a beacon of insight and a source of positive influence. Craft your words with care, for in each sentence lies the potential to resonate with a reader and spark a meaningful connection."</p>
                 <ul class="list social-media">
                     <li class="list-item">
                         <a href="#" class="list-link"><i class="x-far-thumbs-up"></i></a>
@@ -298,52 +276,53 @@
                         <a href="#" class="list-link"><i class="ri-pinterest-line"></i></a>
                     </li>
                 </ul>
-                <span class="copyright-notice">&copy;2021 NewsFlash. All rights reserved.</span>
+                <span class="copyright-notice"></span>
             </div>
 
             <div>
                 <h6 class="title footer-title">Categories</h6>
+                
                 <ul class="footer-list list">
                     <li class="list-item">
-                        <a href="#" class="list-link">Travel</a>
+                        <a href="/blog/category/travel/" class="list-link">Travel</a>
                     </li>
                     <li class="list-item">
-                        <a href="#" class="list-link">Food</a>
+                        <a href="/blog/category/food/" class="list-link">Food</a>
                     </li>
                     <li class="list-item">
-                        <a href="#" class="list-link">Technology</a>
+                        <a href="/blog/category/Technology/" class="list-link">Technology</a>
                     </li>
                     <li class="list-item">
-                        <a href="#" class="list-link">Health</a>
+                        <a href="/blog/category/health/" class="list-link">Health</a>
                     </li>
                     <li class="list-item">
-                        <a href="#" class="list-link">Nature</a>
+                        <a href="/blog/category/nature/" class="list-link">Nature</a>
                     </li>
                     <li class="list-item">
-                        <a href="#" class="list-link">Fitness</a>
+                        <a href="/blog/category/fitness" class="list-link">Fitness</a>
                     </li>
                 </ul>
+
             </div>
 
             <div>
                 <h6 class="title footer-title">Useful links</h6>
+                
                 <ul class="footer-list list">
                     <li class="list-item">
-                        <a href="#" class="list-link">Home</a>
+                        <a href="{% url 'blog:homepage'%}" class="list-link">Home</a>
                     </li>
                     <li class="list-item">
-                        <a href="#" class="list-link">Elements</a>
+                        <a href="{% url 'blog:all_blog' %}" class="list-link">all blogs</a>
                     </li>
                     <li class="list-item">
-                        <a href="#" class="list-link">Tags</a>
+                        <a href="{% url 'store:all_products' %}" class="list-link">Store</a>
                     </li>
                     <li class="list-item">
-                        <a href="#" class="list-link">Authors</a>
-                    </li>
-                    <li class="list-item">
-                        <a href="#" class="list-link">Membership</a>
+                        <a href="{% url 'account:login' %}" class="list-link">login</a>
                     </li>
                 </ul>
+
             </div>
 
             <div>
@@ -905,13 +884,6 @@
                 color:#35b69f;
             }
             
-            
-            .user-feed{
-            
-                    font-size: 14px;
-                    margin-top: 12px;
-            }
-    
             .children form {
                 margin-left: -48px;
             }
@@ -1072,6 +1044,29 @@
 
               
         </style>
+        <style>
+            .rating-star {
+              display: flex;
+              align-items: center;
+            }
+        
+            .star-rating {
+              font-size: 24px;
+              color: #ffd700; /* Set the color of the stars */
+            }
+        
+            .fa-star-half-o::before {
+              content: '\f123'; /* Unicode character for half star (adjust if necessary) */
+            }
+        
+            .fa-star-o::before {
+              content: '\f006'; /* Unicode character for empty star (adjust if necessary) */
+            }
+        
+            h3 {
+              margin-right: 10px;
+            }
+          </style>
         <script>
             function toggleCategoriesDropdown() {
                 var categoriesList = document.getElementById("categoriesList");

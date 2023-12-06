@@ -186,36 +186,39 @@
 </div>
 <style>
   /* Add this CSS for mobile view */
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 700px) {
     #filter {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 70%; /* Adjusted width */
-      height: 100%;
-      background-color: white;
-      z-index: 1;
-      overflow-x: hidden;
-      transition: 0.5s;
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: calc(100% - 70px); /* Adjusted height to leave 70px at the bottom */
+        background-color: white;
+        z-index: 1;
+        overflow-x: hidden;
+        transition: 0.5s;
+        box-sizing: border-box;
+        padding: 20px;
     }
 
     #filter.show {
-      display: block;
+      display:grid;
+
     }
 
     #wrapper {
-      transition: margin-left 0.5s;
+        transition: margin-left 0.5s;
     }
 
     #mobile-filter-link {
-      display: inline-block;
-      cursor: pointer;
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      font-size: 20px;
-      z-index: 2;
+        display: inline-block;
+        cursor: pointer;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        font-size: 20px;
+        z-index: 2;
     }
   }
 </style>
@@ -374,7 +377,7 @@
   
     menuIcon.addEventListener("click", function () {
       // Toggle the 'open' class to display or hide the filter div
-      filterDiv.classList.toggle("open");
+      filterDiv.classList.toggle("show");
     });
   });
 </script>

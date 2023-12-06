@@ -32,7 +32,7 @@
             <div class="menu" id="menu">
                 <ul class="list">
                     <li class="list-item">
-                        <a href="http://127.0.0.1:8000/" class="list-link current">Home</a>
+                        <a href="{% url 'store:all_products' %}" class="list-link current">Store</a>
                     </li>
                     <div class="col-12 pb-5">
                         <ul class="dropdown">
@@ -293,22 +293,22 @@
 
                 <a href="/blog/category/travel/" class="article">
                     <span class="tag-name">#Travel</span>
-                    <img src="/media/images/pexels-andrei-tanase-1271619.jpg" alt="" class="article-image">
+                    <img src="/media/images/pexels-photo-2577274.jpeg" alt="" class="article-image">
                 </a>
 
                 <a href="/blog/category/food/" class="article">
                     <span class="tag-name">#Food</span>
-                    <img src="/media/images/pexels-photo-1640777.jpeg" alt="" class="article-image">
+                    <img src="/media/images/pexels-jane-doan-1099680.jpg" alt="" class="article-image">
                 </a>
 
                 <a href="/blog/category/Technology/" class="article">
                     <span class="tag-name">#Technology</span>
-                    <img src="/media/images/pexels-johannes-plenio-1105379.jpg" alt="" class="article-image">
+                    <img src="/media/images/pexels-pixabay-73910.jpg" alt="" class="article-image">
                 </a>
 
                 <a href="/blog/category/health/" class="article">
                     <span class="tag-name">#Health</span>
-                    <img src="/media/images/pexels-pixabay-235922.jpg" alt="" class="article-image">
+                    <img src="/media/images/pexels-photo-235922.jpeg" alt="" class="article-image">
                 </a>
 
                 <a href="/blog/category/nature/" class="article">
@@ -318,7 +318,7 @@
 
                 <a href="/blog/category/fitness" class="article">
                     <span class="tag-name">#Fitness</span>
-                    <img src="/media/images/pexels-victor-freitas-703012.jpg" alt="" class="article-image">
+                    <img src="/media/images/pexels-photo-2827392.webp" alt="" class="article-image">
                 </a>
 
             </div>
@@ -335,9 +335,9 @@
             
             <div class="company-data">
                 <a href="./index.html">
-                    <h2 class="logo">Blog</h2>
+                    <h2 class="logo">Blogs</h2>
                 </a>
-                <p class="company-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, iure. Harum, animi dolores, nam, ad magni expedita.</p>
+                <p class="company-description">"Words have the power to inspire, create, and transform. In the vast landscape of the internet, let your blog be a beacon of insight and a source of positive influence. Craft your words with care, for in each sentence lies the potential to resonate with a reader and spark a meaningful connection."</p>
                 
                 <ul class="list social-media">
                     <li class="list-item">
@@ -362,22 +362,22 @@
                 
                 <ul class="footer-list list">
                     <li class="list-item">
-                        <a href="#" class="list-link">Travel</a>
+                        <a href="/blog/category/travel/" class="list-link">Travel</a>
                     </li>
                     <li class="list-item">
-                        <a href="#" class="list-link">Food</a>
+                        <a href="/blog/category/food/" class="list-link">Food</a>
                     </li>
                     <li class="list-item">
-                        <a href="#" class="list-link">Technology</a>
+                        <a href="/blog/category/Technology/" class="list-link">Technology</a>
                     </li>
                     <li class="list-item">
-                        <a href="#" class="list-link">Health</a>
+                        <a href="/blog/category/health/" class="list-link">Health</a>
                     </li>
                     <li class="list-item">
-                        <a href="#" class="list-link">Nature</a>
+                        <a href="/blog/category/nature/" class="list-link">Nature</a>
                     </li>
                     <li class="list-item">
-                        <a href="#" class="list-link">Fitness</a>
+                        <a href="/blog/category/fitness" class="list-link">Fitness</a>
                     </li>
                 </ul>
 
@@ -388,19 +388,16 @@
                 
                 <ul class="footer-list list">
                     <li class="list-item">
-                        <a href="#" class="list-link">Home</a>
+                        <a href="{% url 'blog:homepage'%}" class="list-link">Home</a>
                     </li>
                     <li class="list-item">
-                        <a href="#" class="list-link">Elements</a>
+                        <a href="{% url 'blog:all_blog' %}" class="list-link">all blogs</a>
                     </li>
                     <li class="list-item">
-                        <a href="#" class="list-link">Tags</a>
+                        <a href="{% url 'store:all_products' %}" class="list-link">Store</a>
                     </li>
                     <li class="list-item">
-                        <a href="#" class="list-link">Authors</a>
-                    </li>
-                    <li class="list-item">
-                        <a href="#" class="list-link">Membership</a>
+                        <a href="{% url 'account:login' %}" class="list-link">login</a>
                     </li>
                 </ul>
 

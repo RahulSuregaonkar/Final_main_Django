@@ -777,7 +777,7 @@ Product detail
   <div class="spaces1"></div>
   <div class="row">
       <div class="col-md-12">
-          <p class="section-title4">Products from up-fuse </p>
+          <p class="section-title4">similar products</p>
       </div>
       <div class="col-md-12">
           <div class="discovers-grid">
@@ -817,14 +817,6 @@ Product detail
 
 
 <!-- bottom navbar  -->
-
-<nav class="bottom-navbar">
-    <a href="#home" class="fas fa-home"></a>
-    <a href="#featured" class="fas fa-list"></a>
-    <a href="#arrivals" class="fas fa-tags"></a>
-    <a href="#reviews" class="fas fa-comments"></a>
-    <a href="#blogs" class="fas fa-blog"></a>
-</nav>
     <!-- footer section starts  -->
 
 
@@ -1084,6 +1076,8 @@ Product detail
         // Hide the "Load Less" button initially if there are 4 or fewer comments
         document.getElementById('load-less-comments').style.display = commentContainers.length > 4 ? 'none' : 'none';
 
+        document.getElementById('first-4-comments').style.display = commentContainers.length > 4 ? 'none' : 'none';
+        document.getElementById('last-4-comments').style.display = commentContainers.length > 4 ? 'none' : 'none';
         // Hide the "Load More" button if all comments are visible initially
         if (visibleComments >= commentContainers.length) {
             document.getElementById('load-more-comments').style.display = 'none';
