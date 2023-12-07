@@ -11,3 +11,7 @@ WARNING 2023-12-06 19:08:48,414 log log.py 241 log_response Not Found: /checkout
 WARNING 2023-12-06 19:09:13,862 log log.py 241 log_response Not Found: /checkout/payment_successful/image/worldmap.png
 WARNING 2023-12-06 19:09:16,238 log log.py 241 log_response Not Found: /account/orders/image/worldmap.png
 WARNING 2023-12-06 19:09:23,937 log log.py 241 log_response Not Found: /image/worldmap.png
+WARNING 2023-12-06 19:12:08,699 log log.py 241 log_response Not Found: /blog/intel-looks-at-ai-as-a-tool-that-solves-everyday-problems-says-vp-alexis-crowell/assets/images/favicon.png
+WARNING 2023-12-07 10:49:19,429 log log.py 241 log_response Not Found: /favicon.ico
+WARNING 2023-12-07 11:25:06,703 log log.py 241 log_response Not Found: /blog/assets/images/favicon.png
+WARNING 2023-12-07 11:56:23,700 log log.py 241 log_response Not Found: /media/images/81dFDRqDhIL._SL1418__MloRZNR.jpg
