@@ -483,6 +483,28 @@
             font-size: 0.9em;
         }
     }
+        /* Styles for smaller screens (e.g., mobile) */
+    @media only screen and (max-width: 767px) {
+        .menu-thumb img,
+        .featured-slider img,
+        .arrivals-slider img,
+        .team-thumb img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    /* Styles for larger screens */
+    @media only screen and (min-width: 768px) {
+        .menu-thumb img,
+        .featured-slider img,
+        .arrivals-slider img,
+        .team-thumb img {
+            /* Adjust the max-width as needed */
+            max-width: 100%; 
+            height: auto;
+        }
+    }
 </style>
 
 
