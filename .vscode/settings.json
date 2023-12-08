@@ -5,10 +5,10 @@
     "--profile=black",
   ],
   "[python]": {
-      "editor.codeActionsOnSave": {
-          "source.organizeImports": true
-      },
-      "editor.defaultFormatter": "ms-python.autopep8"
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit"
+    },
+    "editor.defaultFormatter": "ms-python.autopep8"
   },
   // Django Extension
   "files.associations": {
