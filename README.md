@@ -25,3 +25,4 @@ STRIPE_ENDPOINT_SECRET = ''
 1. http://127.0.0.1:8000/admin
 2. username and password = admin# Final_Django
 # Final_main_Django
+# Final_main_Django
